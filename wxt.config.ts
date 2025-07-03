@@ -4,7 +4,7 @@ import path from "path";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
-  modules: ['@wxt-dev/module-react'],
+  modules: ['@wxt-dev/module-react', '@wxt-dev/auto-icons'],
   srcDir: 'src', // 追加
   vite: () => ({
     plugins: [tailwindcss()],
@@ -14,4 +14,7 @@ export default defineConfig({
       },
     },
   }),
+  manifest: {
+    permissions: ['sidePanel'],
+  },
 });
